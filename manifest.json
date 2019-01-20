@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"author": "Ahmad Al Haddad",
 	"github": "https://github.com/cdes/figma-automations-plugin",
-  "description": "A set of handy tools to help you become more effecient.  e.g. create a components for each of you selections.",
+  "description": "A set of handy tools to help you become more efficient.  e.g. create a components for each of you selections.",
 	"instructions": "1. Browse Plugins menu 2. Select the command you want.",
 	"updates": [
 		{

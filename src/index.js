@@ -9,8 +9,16 @@ export default class AutomateFigmaPlugin {
     this.process(this.getSelection(), "create-symbol");
   }
 
-  detachInstance() {
-    this.process(this.getSelection(), "detach-instance");
+  async breakComponents() {
+    const { App } = window;
+    for (const [index, node] of this.getSelection().entries()) {
+      App.sendMessage("clearSelection");
+      App.sendMessage("addToSelection", { nodeIds: [node] });
+      App.triggerAction("duplicate-in-place");
+      App.triggerAction("detach-instance");
+      App.triggerAction("select-next-sibling");
+      App.triggerAction("delete-selection");
+    }
   }
 
   createGroups() {
@@ -21,16 +29,12 @@ export default class AutomateFigmaPlugin {
     App.triggerAction("copy-as-png");
   }
 
-  copyAsJpg() {
-    App.triggerAction("copy-as-jpg");
-  }
-
   showGuids() {
     App.triggerAction("toggle-show-guids");
   }
 
   async process(selectedNodes, task) {
-    const { App, figmaPlugin } = window;
+    const { App } = window;
     for (const [index, node] of selectedNodes.entries()) {
       App.sendMessage("clearSelection");
       App.sendMessage("addToSelection", { nodeIds: [node] });
@@ -58,8 +62,8 @@ const menuItems = [
       shortcut: null
     },
     {
-      itemLabel: "Detach Instances",
-      triggerFunction: automateFigmaPlugin.detachInstance.bind(
+      itemLabel: "Break Components",
+      triggerFunction: automateFigmaPlugin.breakComponents.bind(
         automateFigmaPlugin
       ),
       condition: null,
@@ -74,13 +78,7 @@ const menuItems = [
       shortcut: null
     },
     {
-      itemLabel: "Copy as PNG",
-      triggerFunction: automateFigmaPlugin.copyAsPng.bind(automateFigmaPlugin),
-      condition: null,
-      shortcut: null
-    },
-    {
-      itemLabel: "Copy as JPG",
+      itemLabel: "Copy as Image",
       triggerFunction: automateFigmaPlugin.copyAsPng.bind(automateFigmaPlugin),
       condition: null,
       shortcut: null
@@ -95,5 +93,3 @@ const menuItems = [
 ];
 
 window.figmaPlugin.createPluginsMenuItem(...menuItems);
-
-window.createComponentsPlugin = new CreateComponentsPlugin();
