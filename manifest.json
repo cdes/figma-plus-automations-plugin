@@ -15,5 +15,8 @@
 	],
 	"js": [
 		"https://cdes.github.io/figma-automations-plugin/dist/figma-automations-plugin.js"
+	],
+	"images": [
+		"https://cdes.github.io/figma-automations-plugin/dist/preview.png"
   ]
 }
