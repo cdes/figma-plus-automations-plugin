@@ -4,6 +4,10 @@
 
 <hr/>
 
+<p align="center">
+<img src="https://cdes.github.io/figma-automations-plugin/dist/preview.png" height="264" />
+</p>
+
 <h3> Available Automations </h3>
 
 - Create Components (Batch)
