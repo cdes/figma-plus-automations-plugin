@@ -22,7 +22,8 @@
 Can be installed from ([Figma Plugins Manager](https://github.com/jachui/figma-plugin-manager)).
 
 # How to use
-Select 2 or more layers, right click and select 'Advanced Rename'.
+1. Browse Plugins menu
+1. Select the command you want.
 
 
 <h3>License</h3>
