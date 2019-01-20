@@ -11,8 +11,8 @@ export default [
 	{
 		input: 'src/index.js',
 		output: {
-			name: 'figma-plugin-boilterplate',
-			file: 'dist/figma-plugin-boilerplate.js',
+			name: 'figma-automations-plugin',
+			file: 'dist/figma-automations-plugin.js',
 			format: 'umd'
 		},
 		plugins: [

@@ -1,8 +1,8 @@
 {
-  "name": "figma-plugin-boilerplate",
+  "name": "figma-automations-plugin",
   "version": "0.0.1",
-  "description": "An example plugin for Figma that utlize Figma Plugin Manager API.",
-  "repository": "https://cdes@github.com/cdes/figma-plugin-boilerplate.git",
+  "description": "A set of handy tools to help you become more effecient.  e.g. create a components for each of you selections.",
+  "repository": "https://cdes@github.com/cdes/figma-automations-plugin-plugin.git",
   "author": "Ahmad Al Haddad <haddad@ah.sa>",
   "license": "MIT",
   "main": "src/index.js",
@@ -34,7 +34,7 @@
     "rollup-plugin-uglify": "^6.0.0"
   },
   "scripts": {
-    "build": "rollup -cm",
+    "build": "rollup -c",
     "prebuild": "prettier --write src/**",
     "dev": "rollup -cwm",
     "test": "jest --config jest.config.js"
