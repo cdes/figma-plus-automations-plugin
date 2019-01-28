@@ -92,4 +92,4 @@ const menuItems = [
   ]
 ];
 
-window.figmaPlugin.createPluginsMenuItem(...menuItems);
+window.figmaPlus.createPluginsMenuItem(...menuItems);
