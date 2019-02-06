@@ -6,17 +6,10 @@
 	"github": "https://github.com/cdes/figma-automations-plugin",
   "description": "A set of handy tools to help you become more efficient.  e.g. create a components for each of you selections.",
 	"instructions": "1. Browse Plugins menu 2. Select the command you want.",
-	"updates": [
-		{
-			"version": "0.0.1",
-			"date": "1/20/2019",
-			"notes": "First public release."
-		}
-	],
 	"js": [
-		"https://cdes.github.io/figma-automations-plugin/dist/figma-automations-plugin.js"
+		"dist/figma-automations-plugin.js"
 	],
 	"images": [
-		"https://cdes.github.io/figma-automations-plugin/dist/preview.png"
+		"dist/preview.png"
   ]
 }
