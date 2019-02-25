@@ -1,7 +1,7 @@
 {
 	"name": "Automations",
 	"id": "figma-automations-plugin",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"author": "Ahmad Al Haddad",
 	"github": "https://github.com/cdes/figma-automations-plugin",
   "description": "A set of handy tools to help you become more efficient.  e.g. create a components for each of you selections.",
