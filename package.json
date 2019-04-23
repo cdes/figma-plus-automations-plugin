@@ -1,6 +1,6 @@
 {
   "name": "figma-automations-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A set of handy tools to help you become more efficient.  e.g. create a components for each of you selections.",
   "repository": "https://cdes@github.com/cdes/figma-automations-plugin-plugin.git",
   "author": "Ahmad Al Haddad <haddad@ah.sa>",
@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
     "@babel/plugin-transform-arrow-functions": "^7.2.0",
     "@babel/plugin-transform-classes": "^7.2.2",

@@ -1,15 +1,15 @@
 export default class AutomateFigmaPlugin {
-  getSelection() {
+  getSelection = () => {
     const { App } = window;
     const selectedNodes = Object.keys(App._state.mirror.sceneGraphSelection);
     return selectedNodes;
-  }
+  };
 
-  createComponents() {
+  createComponents = () => {
     this.process(this.getSelection(), "create-symbol");
-  }
+  };
 
-  async breakComponents() {
+  breakComponents = async () => {
     const { App } = window;
     for (const [index, node] of this.getSelection().entries()) {
       App.sendMessage("clearSelection");
@@ -19,21 +19,21 @@ export default class AutomateFigmaPlugin {
       App.triggerAction("select-next-sibling");
       App.triggerAction("delete-selection");
     }
-  }
+  };
 
-  createGroups() {
+  createGroups = () => {
     this.process(this.getSelection(), "group-selection");
-  }
+  };
 
-  copyAsPng() {
+  copyAsPng = () => {
     App.triggerAction("copy-as-png");
-  }
+  };
 
-  showGuids() {
+  showGuids = () => {
     App.triggerAction("toggle-show-guids");
-  }
+  };
 
-  async process(selectedNodes, task) {
+  process = async (selectedNodes, task) => {
     const { App } = window;
     for (const [index, node] of selectedNodes.entries()) {
       App.sendMessage("clearSelection");
@@ -41,55 +41,37 @@ export default class AutomateFigmaPlugin {
       App.triggerAction(task);
       App.sendMessage("clearSelection");
     }
-  }
+  };
 }
 
 const automateFigmaPlugin = new AutomateFigmaPlugin();
 window.automateFigmaPlugin = automateFigmaPlugin;
 
-const menuItems = [
-  "Automate",
-  () => {},
-  null,
-  null,
-  [
+const menuItem = {
+  label: "Automate",
+  action: () => {},
+  submenu: [
     {
-      itemLabel: "Create Components",
-      triggerFunction: automateFigmaPlugin.createComponents.bind(
-        automateFigmaPlugin
-      ),
-      condition: null,
-      shortcut: null
+      label: "Create Components",
+      action: automateFigmaPlugin.createComponents
     },
     {
-      itemLabel: "Break Components",
-      triggerFunction: automateFigmaPlugin.breakComponents.bind(
-        automateFigmaPlugin
-      ),
-      condition: null,
-      shortcut: null
+      label: "Break Components",
+      action: automateFigmaPlugin.breakComponents
     },
     {
-      itemLabel: "Create Groups",
-      triggerFunction: automateFigmaPlugin.createGroups.bind(
-        automateFigmaPlugin
-      ),
-      condition: null,
-      shortcut: null
+      label: "Create Groups",
+      action: automateFigmaPlugin.createGroups
     },
     {
-      itemLabel: "Copy as Image",
-      triggerFunction: automateFigmaPlugin.copyAsPng.bind(automateFigmaPlugin),
-      condition: null,
-      shortcut: null
+      label: "Copy as Image",
+      action: automateFigmaPlugin.copyAsPng
     },
     {
-      itemLabel: "Show GUIDs",
-      triggerFunction: automateFigmaPlugin.showGuids.bind(automateFigmaPlugin),
-      condition: null,
-      shortcut: null
+      label: "Show GUIDs",
+      action: automateFigmaPlugin.showGuids
     }
   ]
-];
+};
 
-window.figmaPlus.createPluginsMenuItem(...menuItems);
+window.figmaPlus.addCommand(menuItem);
