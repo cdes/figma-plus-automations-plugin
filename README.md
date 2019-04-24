@@ -5,7 +5,7 @@
 <hr/>
 
 <p align="center">
-<img src="https://cdes.github.io/figma-automations-plugin/dist/preview.png" height="264" />
+<img src="https://user-images.githubusercontent.com/1207863/56624223-a4c7ac00-6640-11e9-8e40-f1d082946dcb.png" height="264" />
 </p>
 
 <h3> Available Automations </h3>
